@@ -1,0 +1,63 @@
+[
+  {
+    "id": "2025-26",
+    "title": "Committee (2025/26)",
+    "subtitle": "Committee members appointed for the year 2025/26",
+    "officials": [
+      { "name": "Mr. Heminda Jayaweera", "role": "Chairman (EF 2021)" }
+    ],
+    "members": [
+      { "name": "Ms. Seroshi Nandasiri", "role": "EF 2024" },
+      { "name": "Mr. Asiri Hewamalage", "role": "EF 2024" },
+      { "name": "Ms. Nevindaree Premarathne", "role": "EF 2025" }
+    ]
+  },
+  {
+    "id": "2017-19",
+    "title": " Committee (2017/19)",
+    "subtitle": "Interim Committee appointed at the Annual General Meeting held on December 07, 2017",
+    "officials": [
+      { "name": "Mr. J.C. Weliamuna", "role": "Chairman (EF 2004 SARP)" },
+      { "name": "Mr. Ruwanthie de Chikera", "role": "Secretary (EF 2014 MNP)" },
+      { "name": "Mr. Harsha Purasinghe", "role": "Secretary Innovation (EF 2014 MNP)" },
+      { "name": "Mr. Jayantha Fernando", "role": "Treasurer (EF 2012 SARP)" }
+    ],
+    "members": [
+      { "name": "Mr. Dayananda Gunawardena", "role": "EF 1986 MNP" },
+      { "name": "Mr. Nayana Mawilmada", "role": "EF 2017 MESA" }
+    ]
+  },
+  {
+    "id": "2013-14",
+    "title": "Committee (2013/14)",
+    "subtitle": "Appointed for the year 2014 at the Annual General Meeting held on November 30, 2013",
+    "officials": [
+      { "name": "Dr. Paikiasothy Saravanamuttu", "role": "Chairman (2004 SRP)" },
+      { "name": "Mr. Jayantha Fernando", "role": "Treasurer (2012 SRP)" },
+      { "name": "Mr. Saliya Peiries", "role": "Secretary (2012 SRP)" }
+    ],
+    "members": [
+      { "name": "Mr. Chrishantha Weliamuna", "role": "2004 SRP" },
+      { "name": "Mrs. Susie Perera", "role": "2007 MNP" },
+      { "name": "Mrs. Kanchana Weerakoon", "role": "2012 SRP" }
+    ],
+    "pastOffice": [
+      { "name": "Chandra Jayaratne", "role": "Past Chairman (1989 MNP)" },
+      { "name": "Mr. Dayananda Gunawardena", "role": "Past Secretary & Treasurer (1986 MNP)" }
+    ]
+  },
+  {
+    "id": "2008-09",
+    "title": "Committee (2008/09)",
+    "subtitle": "Committee members appointed for the year 2008",
+    "officials": [
+      { "name": "Mr. Chandra Jayaratne", "role": "Chairman (1989 MNP)" },
+      { "name": "Mr. H. Dayananda Gunawardena", "role": "Secretary and Treasurer (1986 MNP)" }
+    ],
+    "members": [
+      { "name": "Mr. Chrishantha Weliamuna", "role": "2004 SRP" },
+      { "name": "Mrs. Kala Peiris De Costa", "role": "2004 SRP" },
+      { "name": "Mrs. Subashini Rasanja", "role": "2007 MNP" }
+    ]
+  }
+]
