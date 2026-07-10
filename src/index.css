@@ -2017,15 +2017,17 @@ img {
     --logo-height: 36px;
     --logo-clearance: 200px;
   }
-  /* Keep logo fully inside the header so it never covers page content */
+  /* Keep logo fully inside the header; leave room for the menu toggle */
   .logo-link {
     top: 8px;
     left: 16px;
     padding: 3px;
+    max-width: min(200px, calc(100vw - 72px));
   }
   .logo-img {
-    max-width: min(200px, 52vw);
+    max-width: 100%;
     height: auto;
+    width: auto;
   }
   .header-topbar .container {
     gap: 14px;
@@ -2044,10 +2046,33 @@ img {
     font-size: 1.75rem;
   }
   .hero {
-    height: 480px;
+    /* Grow with content so tagline + CTAs are never clipped */
+    height: auto;
+    min-height: 420px;
+    padding: 40px 0 80px;
+    align-items: flex-end;
+  }
+  .hero-tagline {
+    font-size: 0.78rem;
+    letter-spacing: 1px;
+    line-height: 1.45;
+    word-break: break-word;
   }
   .hero-title {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
+    margin-bottom: 16px;
+  }
+  .hero-desc {
+    font-size: 1rem;
+    margin-bottom: 24px;
+  }
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero-actions .btn {
+    width: 100%;
   }
   .welcome-grid {
     grid-template-columns: 1fr;
@@ -2055,6 +2080,7 @@ img {
   }
   .welcome-block {
     padding: 30px;
+    margin-top: -40px;
   }
   .about-history-section {
     grid-template-columns: 1fr;
@@ -2099,9 +2125,7 @@ img {
   .logo-link {
     top: 6px;
     left: 12px;
-  }
-  .logo-img {
-    max-width: min(168px, 48vw);
+    max-width: min(168px, calc(100vw - 64px));
   }
   .header-topbar .container {
     gap: 10px;
@@ -2109,6 +2133,21 @@ img {
   }
   .topbar-link:first-child {
     display: none;
+  }
+  .hero {
+    padding: 32px 0 72px;
+    min-height: 380px;
+  }
+  .hero-tagline {
+    font-size: 0.72rem;
+    letter-spacing: 0.6px;
+  }
+  .hero-title {
+    font-size: 1.85rem;
+  }
+  .welcome-block {
+    margin-top: -32px;
+    padding: 24px;
   }
   .contact-method-item {
     gap: 12px;
