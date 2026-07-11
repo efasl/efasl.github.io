@@ -4,6 +4,7 @@ import { ArrowRight, Award, Users, BookOpen } from 'lucide-react';
 function Home({ navigateTo }) {
   const [featuredNews, setFeaturedNews] = useState([]);
   const [recentFellows, setRecentFellows] = useState([]);
+  const [ylpCohorts, setYlpCohorts] = useState([]);
 
   useEffect(() => {
     fetch('./data/fellows.json')
@@ -29,6 +30,13 @@ function Home({ navigateTo }) {
         setFeaturedNews(sorted.slice(0, 3));
       })
       .catch((err) => console.error('Error fetching news:', err));
+  }, []);
+
+  useEffect(() => {
+    fetch('./data/ylp.json')
+      .then((res) => res.json())
+      .then((data) => setYlpCohorts(data))
+      .catch((err) => console.error('Error fetching YLP cohorts:', err));
   }, []);
 
   return (
@@ -112,17 +120,6 @@ function Home({ navigateTo }) {
               <span className="feature-link">Meet the Fellows <ArrowRight size={14} /></span>
             </div>
 
-            <div className="feature-card" style={{ cursor: 'pointer' }} onClick={() => navigateTo('news')}>
-              <div className="feature-icon-wrapper">
-                <BookOpen size={24} />
-              </div>
-              <h3 className="feature-title">Experience Sharing</h3>
-              <p className="feature-desc">
-                Organizing annual seminars, lectures, and panel discussions on governance, societal challenges, and global leadership ideas.
-              </p>
-              <span className="feature-link">News &amp; Updates <ArrowRight size={14} /></span>
-            </div>
-
             <div className="feature-card" style={{ cursor: 'pointer' }} onClick={() => { window.location.hash = '#/fellowship'; setTimeout(() => { document.getElementById('efasl-youth-leadership')?.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>
               <div className="feature-icon-wrapper">
                 <Award size={24} />
@@ -132,6 +129,17 @@ function Home({ navigateTo }) {
                 Developing the next generation of purpose-driven Sri Lankan leaders through the Youth Leadership Program; mentorship, peer learning, and a commitment to lasting impact.
               </p>
               <span className="feature-link">Youth Leadership Program <ArrowRight size={14} /></span>
+            </div>
+
+            <div className="feature-card" style={{ cursor: 'pointer' }} onClick={() => navigateTo('news')}>
+              <div className="feature-icon-wrapper">
+                <BookOpen size={24} />
+              </div>
+              <h3 className="feature-title">Experience Sharing</h3>
+              <p className="feature-desc">
+                Organizing annual seminars, lectures, and panel discussions on governance, societal challenges, and global leadership ideas.
+              </p>
+              <span className="feature-link">News &amp; Updates <ArrowRight size={14} /></span>
             </div>
           </div>
         </div>
@@ -170,6 +178,40 @@ function Home({ navigateTo }) {
               View All Fellows <ArrowRight size={16} />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* Youth Leadership Program Section */}
+      <section className="page-section" style={{ backgroundColor: '#f1f5f9' }}>
+        <div className="container">
+          <div className="page-title-block">
+            <h2 className="page-title">Youth Leadership Program</h2>
+            <p className="page-subtitle">Empowering the next generation of purpose-driven Sri Lankan leaders through mentorship, collaboration, and impact.</p>
+            <div className="title-separator"></div>
+          </div>
+
+          {ylpCohorts.length > 0 && (
+            <div className="ylp-cohort-cards" style={{ justifyContent: 'center', marginTop: '32px' }}>
+              {ylpCohorts.map((c) => (
+                <div
+                  key={c.cohort}
+                  className="ylp-cohort-card"
+                  onClick={() => navigateTo(`ylp/${c.cohort}`)}
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => e.key === 'Enter' && navigateTo(`ylp/${c.cohort}`)}
+                >
+                  <div className="ylp-cohort-card-label">Youth Leadership Program</div>
+                  <div className="ylp-cohort-card-year">{c.cohort}</div>
+                  <div className="ylp-cohort-card-count">
+                    <Users size={14} />
+                    {c.members.length} participants
+                    <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
