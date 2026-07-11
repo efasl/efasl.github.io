@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Facebook, Linkedin, MapPin, Globe } from 'lucide-react';
+import { Mail, Facebook, Linkedin, MapPin, Globe, Youtube } from 'lucide-react';
 
 function Footer({ navigateTo }) {
   const currentYear = new Date().getFullYear();
@@ -27,6 +27,9 @@ function Footer({ navigateTo }) {
             </a>
             <a href="https://www.linkedin.com/company/eisenhower-fellowship-association-of-sri-lanka/" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="LinkedIn">
               <Linkedin size={18} />
+            </a>
+            <a href="https://www.youtube.com/@eisenhowerfellowships-sril6738" target="_blank" rel="noopener noreferrer" className="social-icon-btn" aria-label="YouTube">
+              <Youtube size={18} />
             </a>
           </div>
         </div>

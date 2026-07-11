@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, MapPin, Facebook, Linkedin } from 'lucide-react';
+import { Mail, MapPin, Facebook, Linkedin, Youtube } from 'lucide-react';
 
 function Contact() {
   return (
@@ -69,6 +69,15 @@ function Contact() {
                   style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}
                 >
                   <Facebook size={16} /> Facebook
+                </a>
+                <a
+                  href="https://www.youtube.com/@eisenhowerfellowships-sril6738"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                  style={{ borderColor: 'var(--primary)', color: 'var(--primary)' }}
+                >
+                  <Youtube size={16} /> YouTube
                 </a>
               </div>
             </div>
