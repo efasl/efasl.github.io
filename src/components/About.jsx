@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, ExternalLink } from 'lucide-react';
 
 function About() {
   const [expandedCommittee, setExpandedCommittee] = useState('2025-26');
@@ -118,14 +118,22 @@ function About() {
             </div>
             <div className="about-history-image">
               <div className="about-card-info">
-                <h2>EF US Global Overview</h2>
+                <h2>Eisenhower Fellowships (EF) Global Overview</h2>
                 <div className="title-separator" style={{ margin: '12px 0 24px 0' }}></div>
                 <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '16px' }}>
                   Founded in 1953 as a tribute to Dwight D. Eisenhower from his friends as he assumed the presidency. Its design reflects his conviction that greater understanding among individuals fosters greater understanding among nations.
                 </p>
-                <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)' }}>
+                <p style={{ fontSize: '0.95rem', color: 'var(--text-muted)', marginBottom: '24px' }}>
                   Every year, Eisenhower Fellowships brings emerging leaders from around the world to the United States for seven weeks of professional enrichment, creating a connected global network of leaders.
                 </p>
+                <a
+                  href="https://www.efworld.org/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  Visit EF Global <ExternalLink size={15} />
+                </a>
               </div>
             </div>
           </div>
