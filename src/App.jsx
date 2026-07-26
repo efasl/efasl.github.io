@@ -9,6 +9,7 @@ import NewsList from './components/NewsList';
 import NewsDetail from './components/NewsDetail';
 import Contact from './components/Contact';
 import YLPCohort from './components/YLPCohort';
+import YLP from './components/YLP';
 
 function App() {
   // route = { tab: string, slug: string|null }
@@ -69,7 +70,9 @@ function App() {
           : <NewsList navigateTo={navigateTo} />;
       case 'ylp':
         // sub-route: #/ylp/{year}
-        return <YLPCohort cohort={slug} navigateTo={navigateTo} />;
+        return slug
+          ? <YLPCohort cohort={slug} navigateTo={navigateTo} />
+          : <YLP navigateTo={navigateTo} />;
       case 'contact':
         return <Contact />;
       default:

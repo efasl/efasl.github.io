@@ -12,14 +12,18 @@ function Header({ activeTab, navigateTo }) {
   };
 
   const handleFellowshipSubClick = (anchor) => {
-    navigateTo('fellowship');
+    if (anchor === 'efasl-youth-leadership') {
+      navigateTo('ylp');
+    } else {
+      navigateTo('fellowship');
+      // Wait for page to render then scroll
+      setTimeout(() => {
+        const el = document.getElementById(anchor);
+        if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
     setIsMobileMenuOpen(false);
     setFellowshipDropdownOpen(false);
-    // Wait for page to render then scroll
-    setTimeout(() => {
-      const el = document.getElementById(anchor);
-      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 100);
   };
 
   const fellowshipSubLinks = [

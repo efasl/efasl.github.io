@@ -178,6 +178,18 @@ function Fellowship({ navigateTo }) {
                   Through mentorship from Senior Eisenhower Fellows, immersive workshops, and peer learning, participants develop the leadership skills, networks, and vision needed to drive positive change in their communities and beyond.
                 </p>
 
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0, overflow: 'hidden', maxWidth: '800px', borderRadius: '12px', boxShadow: '0 8px 32px rgba(0,0,0,0.15)', margin: '24px auto' }}>
+                  <iframe
+                    src="https://www.youtube.com/embed/KPRgA5_w9EM?si=k3id5jpYrCKhT4g7"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                  />
+                </div>
+
                 {ylpCohorts.length > 0 && (
                   <div style={{ marginTop: '32px' }}>
                     <p style={{ fontSize: '0.85rem', textTransform: 'uppercase', letterSpacing: '0.08em', fontWeight: 600, color: 'var(--accent)', marginBottom: '16px' }}>

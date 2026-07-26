@@ -56,10 +56,10 @@ function YLPCohort({ cohort, navigateTo }) {
       <section className="page-section" style={{ backgroundColor: 'var(--primary)', color: 'var(--text-light)', padding: '80px 0 60px', borderBottom: '4px solid var(--accent)' }}>
         <div className="container">
           <button
-            onClick={() => navigateTo('fellowship')}
+            onClick={() => navigateTo('ylp')}
             style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.875rem', marginBottom: '28px', padding: 0 }}
           >
-            <ArrowLeft size={16} /> Fellowship Programs
+            <ArrowLeft size={16} /> Youth Leadership Program
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
             <span style={{ background: 'var(--accent)', color: '#fff', fontWeight: 700, fontSize: '0.8rem', padding: '4px 12px', borderRadius: 'var(--radius-full)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
