@@ -122,7 +122,7 @@ function Home({ navigateTo }) {
               <span className="feature-link">Meet the Fellows <ArrowRight size={14} /></span>
             </div>
 
-            <div className="feature-card" style={{ cursor: 'pointer' }} onClick={() => { window.location.hash = '#/fellowship'; setTimeout(() => { document.getElementById('efasl-youth-leadership')?.scrollIntoView({ behavior: 'smooth' }); }, 100); }}>
+            <div className="feature-card" style={{ cursor: 'pointer' }} onClick={() => navigateTo('ylp')}>
               <div className="feature-icon-wrapper">
                 <Award size={24} />
               </div>
@@ -214,6 +214,12 @@ function Home({ navigateTo }) {
               ))}
             </div>
           )}
+
+          <div style={{ textAlign: 'center', marginTop: '36px' }}>
+            <a href="#/ylp" className="btn btn-primary" onClick={() => navigateTo('ylp')}>
+              About Youth Leadership Program <ArrowRight size={16} />
+            </a>
+          </div>
         </div>
       </section>
 
