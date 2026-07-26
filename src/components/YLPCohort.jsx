@@ -63,7 +63,7 @@ function YLPCohort({ cohort, navigateTo }) {
           </button>
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px', marginBottom: '12px' }}>
             <span style={{ background: 'var(--accent)', color: '#fff', fontWeight: 700, fontSize: '0.8rem', padding: '4px 12px', borderRadius: 'var(--radius-full)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>
-              EFASL YLP
+              EFASL Youth Leadership Program
             </span>
           </div>
           <h1 className="page-title" style={{ color: 'var(--text-light)', marginBottom: '12px' }}>
@@ -150,7 +150,22 @@ function YLPCohort({ cohort, navigateTo }) {
                       {item.date && (
                         <span className="news-date">{new Date(item.date).toLocaleDateString('en-LK', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
                       )}
-                      <h4 className="ylp-news-title">{item.title}</h4>
+                      <h4 className="ylp-news-title">
+                        {(() => {
+                          if (!item.title) return '';
+                          const today = new Date();
+                          const yyyy = today.getFullYear();
+                          const mm = String(today.getMonth() + 1).padStart(2, '0');
+                          const dd = String(today.getDate()).padStart(2, '0');
+                          const todayStr = `${yyyy}-${mm}-${dd}`;
+                          if (item.date && item.date >= todayStr) {
+                            if (!item.title.toLowerCase().startsWith('[scheduled]')) {
+                              return `[Scheduled] ${item.title}`;
+                            }
+                          }
+                          return item.title;
+                        })()}
+                      </h4>
                       {item.text && (
                         <p className="ylp-news-text">{item.text.slice(0, 200)}{item.text.length > 200 ? '…' : ''}</p>
                       )}

@@ -399,5 +399,45 @@
     "program": "efasl-ylp-2026",
     "type": "meeting",
     "text": "The Youth Leadership Program hosted an inspiring session with Eisenhower Fellows Verónica Pascual Boé of Spain and Mothanna Gharaibeh of Jordan. They shared their experiences in leadership, innovation, entrepreneurship, and public service while discussing the development of technology, investment, and STEM ecosystems with the youth leaders."
+  },
+  {
+    "title": "YLP Session with Captain Navin De Silva and Dinesh De Silva",
+    "slug": "ylp-session-captain-navin-and-dinesh-de-silva",
+    "image": null,
+    "link": null,
+    "date": "2026-07-15",
+    "program": "efasl-ylp-2026",
+    "type": "meeting",
+    "text": "The session included a golf introduction by Binupa Wijesinghe, a meeting with Captain Navin De Silva and Dinesh De Silva, followed by a Q&A session."
+  },
+  {
+    "title": "YLP Meeting with Martin Klose (Chief of Delegation, German Industry and Commerce)",
+    "slug": "ylp-meeting-martin-klose",
+    "image": null,
+    "link": null,
+    "date": "2026-07-21",
+    "program": "efasl-ylp-2026",
+    "type": "meeting",
+    "text": "Meeting with Martin Klose, Chief of Delegation, Delegation of German Industry and Commerce."
+  },
+  {
+    "title": "YLP Meeting with Suren Rajakarier (Country Managing Partner of KPMG)",
+    "slug": "ylp-meeting-suren-rajakarier",
+    "image": null,
+    "link": null,
+    "date": "2026-07-27",
+    "program": "efasl-ylp-2026",
+    "type": "meeting",
+    "text": "A meeting with Suren Rajakarier, Country Managing Partner of KPMG in Sri Lanka and Maldives."
+  },
+  {
+    "title": "EFASL YLP Cohort Final Presentation",
+    "slug": "efasl-ylp-cohort-final-presentation",
+    "image": null,
+    "link": null,
+    "date": "2026-09-03",
+    "program": "efasl-ylp-2026",
+    "type": "meeting",
+    "text": "The final presentation of the cohort. All fellows will present about their experience and their projects' next phase in 2-3 minutes."
   }
 ]
