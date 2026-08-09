@@ -94,6 +94,13 @@ function YLPCohort({ cohort, navigateTo }) {
             <div className="title-separator"></div>
           </div>
 
+          {/* Cohort Image */}
+          {data.image && (
+            <div className="ylp-cohort-image-container">
+              <img src={data.image} alt={`YLP Cohort ${data.cohort}`} />
+            </div>
+          )}
+
           {/* Members */}
           <div style={{ marginBottom: '72px' }}>
             <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--primary)', marginBottom: '24px' }}>

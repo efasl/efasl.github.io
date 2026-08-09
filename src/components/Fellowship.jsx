@@ -205,12 +205,19 @@ function Fellowship({ navigateTo }) {
                           tabIndex={0}
                           onKeyDown={e => e.key === 'Enter' && navigateTo(`ylp/${c.cohort}`)}
                         >
-                          <div className="ylp-cohort-card-label">Youth Leadership Program</div>
-                          <div className="ylp-cohort-card-year">{c.cohort}</div>
-                          <div className="ylp-cohort-card-count">
-                            <Users size={14} />
-                            {c.members.length} participants
-                            <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
+                          {c.image && (
+                            <div className="ylp-cohort-card-img-wrapper">
+                              <img src={c.image} alt={`YLP Cohort ${c.cohort}`} className="ylp-cohort-card-img" />
+                            </div>
+                          )}
+                          <div className="ylp-cohort-card-content">
+                            <div className="ylp-cohort-card-label">Youth Leadership Program</div>
+                            <div className="ylp-cohort-card-year">{c.cohort}</div>
+                            <div className="ylp-cohort-card-count">
+                              <Users size={14} />
+                              {c.members.length} participants
+                              <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
+                            </div>
                           </div>
                         </div>
                       ))}

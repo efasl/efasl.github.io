@@ -2376,18 +2376,44 @@ img {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
-  padding: 28px;
   cursor: pointer;
   transition: var(--transition-fast);
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  overflow: hidden;
 }
 
 .ylp-cohort-card:hover {
   box-shadow: var(--shadow-lg);
   border-color: var(--primary);
   transform: translateY(-2px);
+}
+
+.ylp-cohort-card-img-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  width: 100%;
+  overflow: hidden;
+  background-color: #e8ecf0;
+}
+
+.ylp-cohort-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition-slow);
+}
+
+.ylp-cohort-card:hover .ylp-cohort-card-img {
+  transform: scale(1.05);
+}
+
+.ylp-cohort-card-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex-grow: 1;
 }
 
 .ylp-cohort-card-year {
@@ -2415,6 +2441,21 @@ img {
   margin-top: auto;
   padding-top: 12px;
   border-top: 1px solid var(--border-color);
+}
+
+.ylp-cohort-image-container {
+  margin-bottom: 40px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  aspect-ratio: 16 / 9;
+  background-color: #e8ecf0;
+}
+
+.ylp-cohort-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 @media (max-width: 600px) {

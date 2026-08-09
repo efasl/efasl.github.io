@@ -58,7 +58,7 @@ function YLP({ navigateTo }) {
                 <h3 style={{ fontSize: '1.3rem', fontFamily: 'var(--font-serif)', color: 'var(--primary)', marginBottom: '20px', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   Explore YLP Cohorts
                 </h3>
-                <div className="ylp-cohort-cards" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '20px' }}>
+                <div className="ylp-cohort-cards">
                   {ylpCohorts.map(c => (
                     <div
                       key={c.cohort}
@@ -67,14 +67,20 @@ function YLP({ navigateTo }) {
                       role="button"
                       tabIndex={0}
                       onKeyDown={e => e.key === 'Enter' && navigateTo(`ylp/${c.cohort}`)}
-                      style={{ cursor: 'pointer' }}
                     >
-                      <div className="ylp-cohort-card-label">Youth Leadership Program</div>
-                      <div className="ylp-cohort-card-year">{c.cohort}</div>
-                      <div className="ylp-cohort-card-count" style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: '12px', color: 'var(--text-muted)' }}>
-                        <Users size={14} />
-                        {c.members.length} participants
-                        <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
+                      {c.image && (
+                        <div className="ylp-cohort-card-img-wrapper">
+                          <img src={c.image} alt={`YLP Cohort ${c.cohort}`} className="ylp-cohort-card-img" />
+                        </div>
+                      )}
+                      <div className="ylp-cohort-card-content">
+                        <div className="ylp-cohort-card-label">Youth Leadership Program</div>
+                        <div className="ylp-cohort-card-year">{c.cohort}</div>
+                        <div className="ylp-cohort-card-count">
+                          <Users size={14} />
+                          {c.members.length} participants
+                          <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
+                        </div>
                       </div>
                     </div>
                   ))}

@@ -1,6 +1,7 @@
 [
   {
     "cohort": 2025,
+    "image": "img/news/ylp-cohort-2025.jpeg",
     "members": [
       {
         "name": "Duleen Wickramasuriya",
@@ -38,6 +39,7 @@
   },
   {
     "cohort": 2026,
+    "image": "img/news/ylp-cohort-2026.jpeg",
     "members": [
       {
         "name": "Anuruddha Bandara",
