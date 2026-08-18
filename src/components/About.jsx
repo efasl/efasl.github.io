@@ -4,6 +4,7 @@ import { ChevronDown, ExternalLink } from 'lucide-react';
 function About() {
   const [expandedCommittee, setExpandedCommittee] = useState('2025-26');
   const [committees, setCommittees] = useState([]);
+  const showConstitution = import.meta.env.VITE_SHOW_CONSTITUTION === 'true';
 
   useEffect(() => {
     fetch('./data/committees.json')
@@ -180,41 +181,42 @@ function About() {
             </div>
           </div>
 
-          {/* Constitution Section */}
-          <div className="constitution-section">
-            <div className="page-title-block">
-              <h2 className="page-title">Association Constitution</h2>
-              <p className="page-subtitle">The constitutional rules governing the affairs of the Eisenhower Fellowships Association of Sri Lanka.</p>
-              <div className="title-separator"></div>
-            </div>
+          {showConstitution && (
+            <div className="constitution-section">
+              <div className="page-title-block">
+                <h2 className="page-title">Association Constitution</h2>
+                <p className="page-subtitle">The constitutional rules governing the affairs of the Eisenhower Fellowships Association of Sri Lanka.</p>
+                <div className="title-separator"></div>
+              </div>
 
-            <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '-20px auto 40px auto' }}>
-              Adopted on December 07, 2004 by the Sri Lankan Eisenhower Fellows at Queens Court, TransAsia Hotel, Colombo.
-            </p>
+              <p style={{ textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.95rem', maxWidth: '700px', margin: '-20px auto 40px auto' }}>
+                Adopted on December 07, 2004 by the Sri Lankan Eisenhower Fellows at Queens Court, TransAsia Hotel, Colombo.
+              </p>
 
-            <div className="constitution-list">
-              {constitutionItems.map((item) => (
-                <div className="constitution-item" key={item.num}>
-                  <div className="constitution-num">{item.num}.</div>
-                  <div className="constitution-item-content">
-                    <h4>{item.title}</h4>
-                    <p>{item.text}</p>
-                    
-                    {item.subitems && (
-                      <ul className="constitution-sublist">
-                        {item.subitems.map((sub, idx) => (
-                          <li className="constitution-subitem" key={idx}>
-                            <span className="constitution-subletter">{sub.letter})</span>
-                            <span>{sub.content}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    )}
+              <div className="constitution-list">
+                {constitutionItems.map((item) => (
+                  <div className="constitution-item" key={item.num}>
+                    <div className="constitution-num">{item.num}.</div>
+                    <div className="constitution-item-content">
+                      <h4>{item.title}</h4>
+                      <p>{item.text}</p>
+                      
+                      {item.subitems && (
+                        <ul className="constitution-sublist">
+                          {item.subitems.map((sub, idx) => (
+                            <li className="constitution-subitem" key={idx}>
+                              <span className="constitution-subletter">{sub.letter})</span>
+                              <span>{sub.content}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
         </div>
       </section>

@@ -12,3 +12,7 @@ archive/
 
 # OS files
 .DS_Store
+
+# Local env overrides (committed .env holds defaults)
+.env.local
+.env.*.local
