@@ -478,13 +478,23 @@
     "text": "The Youth Leadership Program (YLP) 2nd cohort met Professor Bilge Demirköz (EF Turkey 2024), a physicist and member of the UN Independent International Scientific Panel on AI."
   },
   {
+    "title": "YLP Meeting with Dian Gomes",
+    "slug": "ylp-meeting-dian-gomes",
+    "image": null,
+    "link": null,
+    "date": "2026-08-21",
+    "program": "efasl-ylp-2026",
+    "type": "meeting",
+    "text": "A 4+ hour session with Dian Gomes, sharing invaluable leadership experiences and stories."
+  },
+  {
     "title": "EFASL YLP Cohort Final Presentation",
     "slug": "efasl-ylp-cohort-final-presentation",
     "image": null,
     "link": null,
-    "date": "2026-09-03",
+    "date": "2026-09-10",
     "program": "efasl-ylp-2026",
     "type": "meeting",
-    "text": "The final presentation of the cohort. All fellows will present about their experience and their projects' next phase in 2-3 minutes."
+    "text": "The final presentation of the cohort. All fellows will present about their learming experience and their projects' next phase in 3 minutes."
   }
 ]
