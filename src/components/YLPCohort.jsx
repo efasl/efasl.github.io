@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Linkedin, Users, CalendarDays, ExternalLink } from 'lucide-react';
+import { ArrowLeft, Linkedin, Users, CalendarDays, ExternalLink, BookOpen } from 'lucide-react';
 
 function YLPCohort({ cohort, navigateTo }) {
   const [data, setData] = useState(null);
@@ -26,7 +26,17 @@ function YLPCohort({ cohort, navigateTo }) {
         const news = newsData
           .filter(n => n.program === programSlug)
           .sort((a, b) => new Date(a.date) - new Date(b.date));
-        setRelatedNews(news);
+
+        let meetingCount = 0;
+        const numberedNews = news.map(item => {
+          if (item.type === 'meeting') {
+            meetingCount += 1;
+            return { ...item, sessionNumber: meetingCount };
+          }
+          return item;
+        });
+
+        setRelatedNews(numberedNews);
       })
       .catch(() => setNotFound(true));
   }, [cohort]);
@@ -49,6 +59,8 @@ function YLPCohort({ cohort, navigateTo }) {
       </div>
     );
   }
+
+  const sessionCount = relatedNews.filter(n => n.type === 'meeting').length;
 
   return (
     <div className="ylp-cohort-page">
@@ -76,6 +88,11 @@ function YLPCohort({ cohort, navigateTo }) {
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <CalendarDays size={15} /> {data.cohort} Cohort
             </span>
+            {sessionCount > 0 && (
+              <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                <BookOpen size={15} /> {sessionCount} Sessions
+              </span>
+            )}
           </div>
         </div>
       </section>
@@ -154,9 +171,14 @@ function YLPCohort({ cohort, navigateTo }) {
                       <img src={item.image} alt={item.title} className="ylp-news-img" />
                     )}
                     <div className="ylp-news-body">
-                      {item.date && (
-                        <span className="news-date">{new Date(item.date).toLocaleDateString('en-LK', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
-                      )}
+                      <div className="ylp-news-meta">
+                        {item.date && (
+                          <span className="news-date">{new Date(item.date).toLocaleDateString('en-LK', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                        )}
+                        {item.sessionNumber && (
+                          <span className="ylp-session-badge">Session #{item.sessionNumber}</span>
+                        )}
+                      </div>
                       <h4 className="ylp-news-title">
                         {(() => {
                           if (!item.title) return '';

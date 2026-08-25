@@ -2344,6 +2344,33 @@ img {
   min-width: 0;
 }
 
+.ylp-news-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.ylp-news-meta .news-date {
+  margin-bottom: 0;
+}
+
+.ylp-session-badge {
+  display: inline-flex;
+  align-items: center;
+  background: var(--accent-light);
+  color: var(--accent-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.03em;
+  border: 1px solid rgba(244, 123, 32, 0.25);
+  line-height: 1.35;
+  white-space: nowrap;
+}
+
 .ylp-news-title {
   font-size: 1rem;
   font-weight: 600;
