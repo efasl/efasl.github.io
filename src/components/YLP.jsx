@@ -68,17 +68,21 @@ function YLP({ navigateTo }) {
                       tabIndex={0}
                       onKeyDown={e => e.key === 'Enter' && navigateTo(`ylp/${c.cohort}`)}
                     >
-                      {c.image && (
-                        <div className="ylp-cohort-card-img-wrapper">
+                      <div className="ylp-cohort-card-img-wrapper">
+                        {c.image ? (
                           <img src={c.image} alt={`YLP Cohort ${c.cohort}`} className="ylp-cohort-card-img" />
-                        </div>
-                      )}
+                        ) : (
+                          <div className="news-img-placeholder">
+                            <span>YLP Cohort {c.cohort}</span>
+                          </div>
+                        )}
+                      </div>
                       <div className="ylp-cohort-card-content">
                         <div className="ylp-cohort-card-label">Youth Leadership Program</div>
                         <div className="ylp-cohort-card-year">{c.cohort}</div>
                         <div className="ylp-cohort-card-count">
-                          <Users size={14} />
-                          {c.members.length} participants
+                          {c.members.length > 0 && <Users size={14} />}
+                          {c.members.length > 0 ? `${c.members.length} participants` : 'Await for nominations'}
                           <ArrowRight size={14} style={{ marginLeft: 'auto', color: 'var(--accent)' }} />
                         </div>
                       </div>

@@ -83,7 +83,8 @@ function YLPCohort({ cohort, navigateTo }) {
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '20px', color: 'rgba(255,255,255,0.75)', fontSize: '0.9rem', flexWrap: 'wrap' }}>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <Users size={15} /> {data.members.length} participants
+              {data.members.length > 0 && <Users size={15} />}
+              {data.members.length > 0 ? `${data.members.length} participants` : 'Await for nominations'}
             </span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
               <CalendarDays size={15} /> {data.cohort} Cohort
@@ -106,7 +107,9 @@ function YLPCohort({ cohort, navigateTo }) {
             <p className="page-subtitle">
               {data.cohort === 2025
                 ? 'The inaugural cohort of the EFASL Youth Leadership Program — eight exceptional young leaders who completed a transformative journey, marking the beginning of a new generation of purpose-driven changemakers in Sri Lanka.'
-                : `The ${data.cohort} cohort of the EFASL Youth Leadership Program brings together ${data.members.length} exceptional young leaders from diverse backgrounds, regions, and communities across Sri Lanka, united by a shared commitment to driving positive change.`}
+                : data.members.length > 0
+                  ? `The ${data.cohort} cohort of the EFASL Youth Leadership Program brings together ${data.members.length} exceptional young leaders from diverse backgrounds, regions, and communities across Sri Lanka, united by a shared commitment to driving positive change.`
+                  : `We are currently awaiting nominations for the ${data.cohort} cohort of the EFASL Youth Leadership Program. Check back later for updates on the new participants.`}
             </p>
             <div className="title-separator"></div>
           </div>
@@ -119,38 +122,40 @@ function YLPCohort({ cohort, navigateTo }) {
           )}
 
           {/* Members */}
-          <div style={{ marginBottom: '72px' }}>
-            <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--primary)', marginBottom: '24px' }}>
-              Youth Leaders
-            </h3>
-            <div className="ylp-members-grid">
-              {data.members.map((m, i) => (
-                <div key={i} className="ylp-member-card">
-                  <div className="ylp-member-avatar">
-                    {m.name.split(' ').filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('')}
+          {data.members.length > 0 && (
+            <div style={{ marginBottom: '72px' }}>
+              <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', color: 'var(--primary)', marginBottom: '24px' }}>
+                Youth Leaders
+              </h3>
+              <div className="ylp-members-grid">
+                {data.members.map((m, i) => (
+                  <div key={i} className="ylp-member-card">
+                    <div className="ylp-member-avatar">
+                      {m.name.split(' ').filter(w => /^[A-Z]/.test(w)).slice(0, 2).map(w => w[0]).join('')}
+                    </div>
+                    <div className="ylp-member-info">
+                      <span className="ylp-member-name">{m.name}</span>
+                    </div>
+                    {m.linkedin ? (
+                      <a
+                        href={m.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ylp-linkedin-btn"
+                        title={`${m.name} on LinkedIn`}
+                      >
+                        <Linkedin size={15} />
+                      </a>
+                    ) : (
+                      <span className="ylp-linkedin-btn" style={{ opacity: 0.15, cursor: 'default', pointerEvents: 'none' }}>
+                        <Linkedin size={15} />
+                      </span>
+                    )}
                   </div>
-                  <div className="ylp-member-info">
-                    <span className="ylp-member-name">{m.name}</span>
-                  </div>
-                  {m.linkedin ? (
-                    <a
-                      href={m.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="ylp-linkedin-btn"
-                      title={`${m.name} on LinkedIn`}
-                    >
-                      <Linkedin size={15} />
-                    </a>
-                  ) : (
-                    <span className="ylp-linkedin-btn" style={{ opacity: 0.15, cursor: 'default', pointerEvents: 'none' }}>
-                      <Linkedin size={15} />
-                    </span>
-                  )}
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
+          )}
 
           {/* Related News */}
           {relatedNews.length > 0 && (
