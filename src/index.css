@@ -58,10 +58,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-width: fit-content;
 }
 
 html {
   scroll-padding-top: calc(40px + 72px + 8px);
+  min-width: fit-content;
 }
 
 a {
